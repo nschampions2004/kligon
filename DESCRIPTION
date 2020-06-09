@@ -3,7 +3,7 @@ Version: 0.0.1
 Date: 2020-05-21 
 Title: Kyle Ligon's R Code 
 Description: Miscellaneous R functions
-Authors@R: c(person("Kyle R", "Ligon"), role=c("aut", "cre"), email="kylerligon@gmail.com")
+Authors@R: c(person("Kyle R", "Ligon", email="kylerligon@gmail.com"), role=c("aut", "cre"))
 Author: Kyle R Ligon [aut, cre] (https://github.com/nschampions2004)
 Maintainer: Kyle Ligon <kylerligon@gmail.com> 
 Depends: R(>= 3.6.3)
