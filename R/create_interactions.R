@@ -26,7 +26,7 @@ create_interactions <- function(vector_or_list,
 
   formula_list <- list()
   initial_stem <- glue::glue("{response} ~ ")
-  for (i in 1:length(col_names)) {
+  for (i in 1:length(vector_or_list)) {
     if (i == 1) {
       running_interactions <- glue::glue("{vector_or_list[i]}")
       mf <- glue::glue("{initial_stem} ({running_interactions})^{interaction_depth}")
