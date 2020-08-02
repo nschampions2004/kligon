@@ -46,29 +46,3 @@ archive_it <- function(object, file_destination) {
     writexl::write_xlsx(x = object, path = file_destination)
   }
 }
-
-interaction_creator <- function(vector_or_list, interaction_depth=2) {
-  #'
-  #' @param: vector_or_list- vector or list of columns to interact
-  #' @param: interaction_depth- how deep do you want the interactions to go?
-  #'
-
-  require(glue)
-
-  formula_list <- list()
-  initial_stem <- "sex ~ "
-  for (i in 1:length(col_names)) {
-    if (i == 1) {
-      running_interactions <- glue::glue("{vector_or_list[i]}")
-      mf <- glue::glue("{initial_stem} ({running_interactions})^{interaction_depth}")
-    } else {
-      running_interactions <- glue::glue("{running_interactions}+{vector_or_list[i]}")
-      mf <- glue::glue("{initial_stem} ({running_interactions})^{interaction_depth}")
-    }
-
-    formula_list[i] <- mf
-  }
-
-  formula_list
-}
-
